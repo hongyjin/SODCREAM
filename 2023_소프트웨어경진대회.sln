@@ -1,0 +1,15 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33424.131
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "2023_소프트웨어경진대회", "2023_소프트웨어경진대회\2023_소프트웨어경진대회.vcxitems", "{D6375297-EA7A-45C9-83FB-90211D7678FD}"
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1D45DF53-365E-4C87-9680-68D0EBE550B8}
+	EndGlobalSection
+EndGlobal
