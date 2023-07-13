@@ -7,10 +7,40 @@
     <!-- 브라우저 기본 스타일을 reset합니다 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
     <!-- index.html 페이지에 적용할 스타일시트로 main.css로 연결합니다 -->
-    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="../css/main.css" />
     <title>LmS2</title>
 </head>
 <body>
-    <p>잔디크림 화이팅!!!</p>
+    <div class="top_bar">헤더</div>
+    <div class="box">
+        <div id="myLassi">
+            <div id="title-container">
+                <span id="title">나의 라씨</span>
+                <button id="gotoLassi-btn">도감</button>
+            </div>
+            <div id="lassi-container">
+                <div id="mainLassi">
+                    <button id="closet">옷장</button>
+                </div>
+                <div id="lassis">
+                    <div class="item">1</div>
+                    <div class="item">2</div>
+                    <div class="item">3</div>
+                    <div class="item">4</div>
+                </div>
+            </div>
+            
+        </div>
+
+        <div id="weeklyTodo">
+            <div id="title-container">
+                <span id="title">오늘의 To-Do</span>
+            </div>
+            <div id="weeklyTodo-container">
+                <span id="todayDate">7월 10일</span>
+            </div>
+            <div id="gotoLogin-btn">로그인 후 TO-DO 추가하기 +</div>
+        </div>
+    </div>
 </body>
 </html>
