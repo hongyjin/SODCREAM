@@ -1,0 +1,208 @@
+.body {
+    width: 1920px;
+    min-height: 1080px;
+    background: black;
+}
+
+/*헤더*/
+.navBar {
+    width: 1920px;
+    height: 80px;
+    /* height: inherit;
+    display: inline-flex;
+    padding: 8px 360px;
+    justify-content: center;
+    align-items: center;
+    gap: 920.222px; */
+    border: 1px solid var(--primary-pink, #FDCAC7);
+    background: var(--primary-dark-pink, #ED7D76);
+}
+
+/* 배경 이미지 */
+.background {
+    width: 1920px;
+    height: 843px;
+    flex-shrink: 0;
+    background: url("../asset/INTRO.jpg");
+    background-size: cover;
+    position: relative;
+}
+
+/* 라씨 */
+.Lassi {
+    width: 1920px;
+    height: 2064px;
+    flex-shrink: 0;
+    border-radius: 50px 50px 0px 0px;
+    background: #FFF;
+    position: absolute;
+    margin-top: 740px;
+}
+
+#title-black {
+    color: var(--text-black, #333);
+    font-family: Pretendard;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    letter-spacing: -1.6px;
+    position: absolute;
+    margin-top: 32px;
+    margin-left: 360px;
+}
+
+#mainLassi-container {
+    /* background-color: aqua; */
+    position: relative;
+    height: 820px;
+    /* margin: 0 auto; */
+}
+
+#mainLassi {
+    width: 585px;
+    height: 720px;
+    flex-shrink: 0;
+    border-radius: 30px;
+    background: #FDCAC7;
+    /* margin: 0 auto; */
+    margin-top: 104px;
+    margin-left: 668px;
+    position: absolute;
+    display: inline-block;
+}
+
+#btn_closet {
+    margin-left: 1283px;
+    margin-top: 684px;
+    display: inline-block;
+}
+
+#btn_collection {
+    margin-left: 1283px;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+#subLassi {
+    display: grid;
+    grid-template-rows: 560px 560px;
+    grid-template-columns: 585px 585px;
+    margin: 40px 360px;
+    gap: 40px 30px;
+}
+
+.item {
+    border-radius: 30px;
+    padding: 30px;
+}
+
+.item1 {
+    background-color: #EDDA76;
+}
+
+.item2 {
+    background-color: #76A6ED;
+}
+
+.item3 {
+    background-color: #B976ED;
+}
+
+.item4 {
+    background-color: #A3ED76;
+}
+
+/* 오늘의 TO-Do */
+#todayTodo {
+    width: 1920px;
+    height: 424px;
+    flex-shrink: 0;
+    position: absolute;
+    border-radius: 30px 30px 0px 0px;
+    background: linear-gradient(180deg, #ED7D76 0%, #FDCAC7 100%);
+    box-shadow: 0px -10px 20px 0px rgba(0, 0, 0, 0.25);
+}
+
+#title-white {
+    color: var(--text-black, #FFF);
+    font-family: Pretendard;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    letter-spacing: -1.6px;
+    position: absolute;
+    margin-top: 32px;
+    margin-left: 360px;
+}
+
+#weeklyTodo-container {
+    background-image: linear-gradient(to right, #E8493F 25%, #FFF 20%);
+    width: 1200px;
+    height: 160px;
+    border-radius: 30px;
+    margin: 104px auto 0;
+}
+
+#todayDate {
+    color: #FFF;
+    font-family: Pretendard;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160px;
+    letter-spacing: -1.28px;
+    margin: 61px 79px;
+}
+
+#weeklyDate {
+    display: grid;
+    grid-template-rows: repeat(1, 76px);
+    grid-template-columns: repeat(7, 76px);
+    float: right;
+    margin: 42px;
+    gap: 42px;
+}
+
+.dates {
+    display: flex;
+    justify-content: center;
+    line-height: 76px;
+    /* background-color: aqua; */
+    color: #333;
+    font-family: Pretendard;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: -1.28px;
+    position: relative;
+    z-index: 2;
+}
+
+#todayMarker {
+    width: 76px;
+    height: 76px;
+    background-color: #ED7D76;
+    position: absolute;
+    z-index: 1;
+    border-radius: 50%;
+}
+
+#gotoLogin-btn {
+    background-color: #E8493F;
+    font-size: 15px;
+    color: #FFF;
+    width: 1200px;
+    height: 96px;
+    text-align: center;
+    line-height: 96px;
+    border-radius: 30px;
+    margin: 24px auto;
+    font-family: Pretendard;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: -1.28px;
+}
+
