@@ -77,7 +77,6 @@
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 15px;
     float: left;
-    
 }
 
 .item {
