@@ -6,8 +6,16 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hongyjin/SODCREAM.git"
+  },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hongyjin/SODCREAM/issues"
+  },
+  "homepage": "https://github.com/hongyjin/SODCREAM#readme",
   "dependencies": {
     "ejs": "^3.1.9",
     "express": "^4.18.2",
