@@ -6,7 +6,7 @@ const layouts = require("express-ejs-layouts");
 
 app.set("view engine", "ejs"); //ejs 사용
 app.set("views", path.join(__dirname, "views"));
-app.use(layouts); //레이아웃 등록
+//app.use(layouts); //레이아웃 등록
 
 //app.use(express.static("public")); //외부에서 public 디렉토리 접근 가능
 app.set("port", process.env.PORT || 3000);
