@@ -1,5 +1,6 @@
 const express = require("express");//express 요청
 const app = express();
+const path = require('path');
 const homeController = require("../controllers/homeController");
 const layouts = require("express-ejs-layouts");
 
