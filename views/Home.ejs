@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 브라우저 기본 스타일을 reset합니다 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
+    <!-- index.html 페이지에 적용할 스타일시트로 main.css로 연결합니다 -->
+    <link rel="stylesheet" href="../public/css/generalHome.css" />
+    <title>LmS2</title>
+</head>
+
+<body>
+    <div class="navBar"></div>
+    <div class="background">
+        <div class="Lassi">
+            <span id="title-black">나의 Lassi</span>
+            <div id="mainLassi-container">
+                <div id="mainLassi"></div>
+                <div id="btn_closet">
+                    <a href="/"><img src="../asset/btn_closet.png" width="175px"></a>
+                </div>
+                <div id="btn_collection">
+                    <a href="/"><img src="../asset/btn_collection.png" width="175px"></a>
+                </div>
+            </div>
+            <div id="subLassi">
+                <div class="item item1">공부</div>
+                <div class="item item2">건강</div>
+                <div class="item item3">자기계발</div>
+                <div class="item item4">업무</div>
+            </div>
+            <div id="todayTodo">
+                <span id="title-white">오늘의 TO-DO</span>
+                <div id="weeklyTodo-container">
+                    <span id="todayDate">2023 JULY</span>
+                    <div id="weeklyDate">
+                        <div class="dates day1">1</div>
+                        <div class="dates day1">2</div>
+                        <div class="dates day1">3</div>
+                        <div class="dates day1">4</div>
+                        <div class="dates day1">5</div>
+                        <div class="dates day1">6</div>
+                        <div class="dates day1">7</div>
+                        <div id="todayMarker"></div>
+                    </div>
+                </div>
+                <div id="gotoLogin-btn">로그인 후 TO-DO 추가하기 +</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
