@@ -4,7 +4,7 @@ const path = require('path');
 const mysql = require('mysql');
 const homeController = require("./controllers/homeController");
 const layouts = require("express-ejs-layouts");
-
+const db = require("./models/index.js");
 app.set("views", path.join(__dirname, "./views"));
 app.set("view engine", "ejs"); //ejs 사용
 
