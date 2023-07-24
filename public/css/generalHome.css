@@ -23,7 +23,7 @@
     width: 1920px;
     height: 843px;
     flex-shrink: 0;
-    background: url("../asset/INTRO.jpg");
+    background: url("https://raw.githubusercontent.com/hongyjin/SODCREAM/master/asset/INTRO.jpg?token=GHSAT0AAAAAACCLRAAHKCXGAK43K5HOBZSAZF6EB6A");
     background-size: cover;
     position: relative;
 }
