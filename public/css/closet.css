@@ -1,0 +1,108 @@
+.title{
+    color: var(--text-black, #333);
+
+    /* title */
+    font-family: Pretendard;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    letter-spacing: -1.6px;
+}
+.info{
+    display: flex;
+    height: 180px;
+    padding: 50px 0px;
+    justify-content: center;
+    align-items: center;
+    background: #333;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+.name{
+    display: flex;
+    width: 337px;
+    padding: 15px 30px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 15px;
+    border-radius: 30px;
+    border: 1px solid var(--primary-dark-pink, #ED7D76);
+
+    display: flex;
+    width: 232px;
+    height: 26.667px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+
+    color: var(--text-black, #333);
+    text-align: center;
+
+    /* menu2 */
+    font-family: Pretendard;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.96px;
+}
+.lassisee{
+    width: 483px;
+    height: 586px;
+    flex-shrink: 0;
+    border-radius: 30px;
+    background: var(--primary-pink, #FDCAC7);
+}
+.reset{
+    display: inline-flex;
+    padding: 15.5px 68px 15.5px 67px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    background: var(--primary-dark-pink, #ED7D76);
+
+    color: var(--text-white, #FFF);
+    text-align: center;
+
+    /* menu */
+    font-family: Pretendard;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -0.96px;
+}
+.store{
+    display: flex;
+    width: 235px;
+    padding: 15.5px 77px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    background: var(--primary-red, #E8493F);
+
+    color: var(--text-white, #FFF);
+    text-align: center;
+ 
+    /* menu */
+    font-family: Pretendard;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal; 
+    letter-spacing: -0.96px;
+}
+.closetbox{
+    display: inline-flex;
+    padding: 58px 360px 58px 72px;
+    align-items: center;
+    border-radius: 30px 0px 0px 30px;
+    background: linear-gradient(90deg, #ED7D76 0%, #FDCAC7 100%);
+
+    /* 옷장 */
+    box-shadow: -10px 0px 20px 0px rgba(0, 0, 0, 0.25);
+}
