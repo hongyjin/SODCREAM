@@ -27,6 +27,15 @@ const connection = mysql.createConnection({
         database: 'lms2db'
       });
 
+app.use(express.json()); // Express 미들웨어 설정
+db.sequelize.sync({force : false}) // 서버 실행시 MySQL 과 연동되도록 하는 sync 메서드 
+.then(() => {
+        console.log('데이터 베이스 연결 성공');
+})
+.catch((err) => {
+        console.log(err);
+});
+
 //URL 연결
 console.log(homeController);
 //app.get("/hobby", homeController.showHobby); //취미
