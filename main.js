@@ -1,6 +1,7 @@
 const express = require("express");//express 요청
 const app = express();
 const path = require('path');
+const mysql = require('mysql');
 const homeController = require("./controllers/homeController");
 const layouts = require("express-ejs-layouts");
 
@@ -18,10 +19,25 @@ app.use(
 );
 app.use(express.json()); // Express 미들웨어 설정
 
+//데이터베이스 연결
+const connection = mysql.createConnection({
+        host: '34.64.189.108',
+        user: 'yang',
+        password: 'lms2',
+        database: 'lms2db'
+      });
+
 //URL 연결
 console.log(homeController);
 //app.get("/hobby", homeController.showHobby); //취미
 //app.get("/error", errorController.pageNotFoundError); //에러
+app.get('/users', (req, res) => {
+        connection.query('SELECT * from User', (error, rows) => {
+          if (error) throw error;
+          console.log('User info is: ', rows);
+          res.send(rows);
+        });
+      });
 app.get("/", (req, res) => { //루트 라우트 생성
         res.render("Home");
 });
