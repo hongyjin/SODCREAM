@@ -1,0 +1,107 @@
+
+    .background{
+        display: flex;
+        width: 1920px;
+        height: 1080px;
+        padding: 162px 637px 162px 638px;
+        justify-content: center;
+        align-items: center;
+        background-color:#FFF;
+    }
+    .box{
+        width: 645px; height: 756px; flex-shrink: 0;
+        border-radius: 30px; background: #FFF;
+
+        /* shadow_big */
+        box-shadow: 0px 0px 30px 0px rgba(51, 51, 51, 0.25);
+        margin-left:638px; margin-top:162px;
+    }
+    .image{
+        width: 360px;
+        height: 202.5px;
+        flex-shrink: 0;
+        background: url(<>), lightgray 50% / cover no-repeat;
+        margin-left:142px; margin-top:65px;
+    }
+    .id{
+        width: 440px;   
+        height: 72px;
+        flex-shrink: 0;
+        border-radius: 30px;
+        border: 1px solid var(--primary-dark-pink, #ED7D76);
+        margin-top: 303px; margin-left:102px;
+
+        color: var(--text-gray, #666);
+
+        /* menu2 */
+        font-family: Pretendard;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: -0.96px;
+    }
+    .password{
+        width: 440px;
+        height: 72px;
+        flex-shrink: 0;
+        border-radius: 30px;
+        border: 1px solid var(--primary-dark-pink, #ED7D76);
+        margin-top: 20px; margin-left: 102px;
+
+        color: var(--text-gray, #666);
+
+        /* menu2 */
+        font-family: Pretendard;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: -0.96px;
+    }
+    .loginbut{
+        width: 440px;
+        height: 72px;
+        flex-shrink: 0;
+        margin-top:36px; margin-left:102px;
+        border-radius: 30px;
+        background: var(--primary-red, #E8493F);
+        background-color:#E8493F;
+        text-decoration-color:#FFFFFF;
+
+        color: var(--text-white, #FFF);
+        text-align: center;
+
+        /* menu */
+        font-family: Pretendard;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        letter-spacing: -0.96px;
+    }
+    .question{
+        color: var(--text-gray, #666);
+        text-align: center;
+
+        /* body */
+        font-family: Pretendard;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: -0.8px;
+
+        margin-top:16px;
+    }    
+    .answer{
+        color: var(--text-gray, #666);
+        text-align: center;
+        font-family: Pretendard;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 600;    
+        line-height: normal;
+        letter-spacing: -0.8px;
+        text-decoration-line: underline;
+    }
