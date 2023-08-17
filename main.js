@@ -50,6 +50,9 @@ app.get('/users', (req, res) => {
 app.get("/", (req, res) => { //루트 라우트 생성
         res.render("Home");
 });
+app.get("/TODO", (req, res) => { //루트 라우트 생성
+        res.render("TODO");
+});
 
 //app.use(errorController.pageNotFoundError); //에러 처리 추
 //app.use(errorController.internalServerError);

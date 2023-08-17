@@ -1,0 +1,142 @@
+.body {
+    width: 1920px;
+    min-height: 1080px;
+    background: black;
+}
+
+/*헤더*/
+.navBar {
+    width: 1920px;
+    height: 80px;
+    border: 1px solid var(--primary-pink, #FDCAC7);
+    background: var(--primary-dark-pink, #ED7D76);
+}
+
+/* 배경 이미지 */
+.background {
+    width: 1920px;
+    height: 336px;
+    flex-shrink: 0;
+    background: url("https://github.com/wodustjdus34/LalLa/blob/main/BACKGROUND_LOOK.png?raw=true");
+    background-size: cover;
+    position: relative;
+}
+
+#title-look {
+    width: 522px;
+    height: 160px;
+    position: absolute;
+    background: url("https://github.com/wodustjdus34/LalLa/blob/main/LMS2_Title.png?raw=true");
+}
+
+#title {
+    color: var(--text-black, #333);
+    font-family: Pretendard;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    letter-spacing: -1.6px;
+    margin: 32px 0px 24px 360px;
+}
+
+.calendar {
+    width: 1200px;
+    height: 769px;
+    margin: auto;
+    padding: 10px;
+    border-radius: 50px;
+    background-image: linear-gradient(to bottom, #E8493F 15%, #FFF 15%);
+    box-shadow: 0px 0px 30px 0px rgba(51, 51, 51, 0.25);
+    margin-bottom: 40px;
+}
+
+.header {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 31px;
+    margin-bottom: 51px;
+    color: #FFFFFF; /* 메인 컬러 설정 */ 
+    font-family: Pretendard;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -1.28px;
+}
+
+.days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    text-align: center;
+    padding: 100px;
+  padding-top: 30px;
+}
+
+.day-name {
+    padding: 5px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.day {
+  display: flex;
+align-items: flex-start;
+gap: 10px;
+    padding: 8px;
+    margin-bottom: 50px;
+     display: flex; */
+    width: 38px;
+    height: 32px;
+/*     flex-direction: column; */
+    justify-content: center;
+    
+left: 19px;
+top: 20px;
+color: var(--text-black, #333);
+text-align: center;
+
+/* subTitle */
+font-family: Pretendard;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: -1.28px;
+}
+
+.day.current {
+    background-color: #ED7D76; /* 오늘 컬러 설정 */
+    color: white;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+/* 투두 추가하기 */
+.todayTodo {
+    width: 1286px;
+    min-height: 100px;
+    margin: auto;
+    border-radius: 30px 30px 0px 0px;
+    background: linear-gradient(180deg, #ED7D76 0%, #FDCAC7 100%);
+    box-shadow: 0px -10px 20px 0px rgba(0, 0, 0, 0.25);
+    /* display: inline-flex; */
+    padding: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+#applyTodo-btn {
+    background-color: #E8493F;
+    font-size: 15px;
+    color: #FFFFFF;
+    width: 94%;
+
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    border-radius: 15px;
+    margin: 15px auto;
+}
