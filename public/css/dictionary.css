@@ -1,0 +1,13 @@
+.title{
+    color: var(--text-black, #333);
+
+    /* title */
+    font-family: Pretendard;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    letter-spacing: -1.6px;
+
+    margin-top:36px;
+}
