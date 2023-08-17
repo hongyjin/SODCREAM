@@ -46,6 +46,39 @@ app.get('/main', (req, res) => {
   res.send(html);
 })
 
+
+app.post('/register',(req,res)=>{
+  console.log('회원가입 하는중')
+  const body = req.body;
+  const id = body.id;
+  const pw = body.pw;
+  const name = body.name;
+  const age = body.age;
+
+  client.query('select * from userdata where id=?',[id],(err,data)=>{
+      if(data.length == 0){
+          console.log('회원가입 성공');
+          client.query('insert into userdata(id, name, age, pw) values(?,?,?,?)',[
+              id, name, age, pw
+          ]);
+          res.redirect('/');
+      }else{
+          console.log('회원가입 실패');
+          res.send('<script>alert("회원가입 실패");</script>')
+          res.redirect('/login');
+      }
+  });
+});
+
+app.get('/logout',(req,res)=>{
+  console.log('로그아웃 성공');
+  req.session.destroy(function(err){
+      // 세션 파괴후 할 것들
+      res.redirect('/');
+  });
+
+});
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })

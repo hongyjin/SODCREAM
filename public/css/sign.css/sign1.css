@@ -53,6 +53,8 @@ body{
     font-weight: 400;
     line-height: normal;
     letter-spacing: -0.96px;
+
+    margin-top: 64px; margin-left: 73px;
 }
 .id{
     width: 440px;
@@ -70,6 +72,8 @@ body{
     font-weight: 400;
     line-height: normal;
     letter-spacing: -0.96px;
+
+    margin-top:40px; margin-left: 73px;
 }
 .password{
     width: 440px;
@@ -87,6 +91,8 @@ body{
     font-weight: 400;
     line-height: normal;
     letter-spacing: -0.96px;
+
+    margin-top:40px;  margin-left: 73px;
 }
 .checkpass{
     width: 440px;
@@ -104,6 +110,8 @@ body{
     font-weight: 400;
     line-height: normal;
     letter-spacing: -0.96px;
+
+    margin-top:40px;  margin-left: 73px;
 }
 .email{
     width: 440px;
@@ -121,4 +129,52 @@ body{
     font-weight: 400;
     line-height: normal;
     letter-spacing: -0.96px;
+
+    margin-top:40px;  margin-left: 73px;
+}
+.checkmail{
+    display: flex;
+    width: 175px;
+    height: 60px;
+    padding: 15.5px 25px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+
+    border-radius: 30px;
+    background: var(--primary-pink, #FDCAC7);
+
+    color: var(--text-gray, #666);
+    text-align: center;
+
+    /* menu */
+    font-family: Pretendard;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -0.96px;
+
+    margin-left:363px; margin-top:20px;
+}
+.nextbut{
+    width: 440px;
+    height: 72px;
+    flex-shrink: 0;
+
+    border-radius: 30px;
+    background: var(--primary-red, #E8493F);
+
+    color: var(--text-white, #FFF);
+    text-align: center;
+
+    /* menu */
+    font-family: Pretendard;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -0.96px;
+
+    margin-left:73px; margin-top:156px;   
 }
