@@ -49,7 +49,7 @@
     border-radius: 30px;
     background: var(--primary-pink, #FDCAC7);
 
-    margin-left:360px; margin-top:20px;
+    margin-left:360px; margin-top:-730px;
 }
 .reset{
     display: inline-flex;
@@ -293,105 +293,53 @@
     display: inline-flex;
     padding: 58px 360px 58px 72px;
     align-items: center;
-    height: 586px; position: absolute;
+    height: 586px;
+    position: relative; /* 변경된 부분 */
 
     border-radius: 30px 0px 0px 30px;
     background: linear-gradient(90deg, #ED7D76 0%, #FDCAC7 100%);
 
     /* 옷장 */
     box-shadow: -10px 0px 20px 0px rgba(0, 0, 0, 0.25);
-    margin-left: 873px; margin-top:20px; margin-bottom: 40px;
-    z-index:2;
+    margin-left: 873px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    z-index: 2;
+
+    flex-wrap: wrap; /* 아이템들을 여러 줄로 묶을 수 있도록 설정 */
+    align-content: flex-start; /* 여러 줄 간격을 위해 컨텐츠를 위쪽 정렬 */
 }
 .close1{
     width: 175px;
     height: 256px;
-
-    fill: var(--text-white, #FFF);
-    
-   margin-left: 945px; margin-top:242px;
-
-    display: flex;
-    align-items: flex-start;
-    align-content: flex-start;
-    gap: 36px 45px;
-    flex-wrap: wrap;
+    background-color: #FFF;
+    border-radius: 30px;
+    margin-bottom: 300px;
+    margin: 10px;
 }
-/* .dress2{
-    width: 175px;
-    height: 256px;
-
-    fill: var(--text-white, #FFF);
-    
-    margin-right:360px; 
-    z-index:2; 
-
+.coin{
     display: flex;
-    align-items: flex-start;
-    align-content: flex-start;
-    gap: 36px 45px;
-    flex-wrap: wrap;
+    padding: 3px 19px;
+    justify-content: center;
+    align-items: center;
+    width:65px;
+
+    border-radius: 15px;
+    background: var(--primary-pink, #FDCAC7);
+
+    color: var(--text-gray, #666);
+    text-align: center;
+
+    /* button */
+    font-family: Pretendard;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -0.8px;
+
+    margin-top:214px; margin-left:36px;
 }
-.dress3{
-    width: 175px;
-    height: 256px;
-
-    fill: var(--text-white, #FFF);
-    
-    margin-right:360px; 
-    z-index:2; 
-
-    display: flex;
-    align-items: flex-start;
-    align-content: flex-start;
-    gap: 36px 45px;
-    flex-wrap: wrap;
-}
-.dress4{
-    width: 175px;
-    height: 256px;
-
-    fill: var(--text-white, #FFF);
-    
-    margin-right:360px; 
-    z-index:2; 
-
-    display: flex;
-    align-items: flex-start;
-    align-content: flex-start;
-    gap: 36px 45px;
-    flex-wrap: wrap;
-}
-.dress5{
-    width: 175px;
-    height: 256px;
-
-    fill: var(--text-white, #FFF);
-    
-    margin-right:360px; 
-    z-index:2; 
-
-    display: flex;
-    align-items: flex-start;
-    align-content: flex-start;
-    gap: 36px 45px;
-    flex-wrap: wrap;
-}
-.dress6{
-    width: 175px;
-    height: 256px;
-
-    fill: var(--text-white, #FFF);
-    
-    margin-right:360px; 
-    z-index:2; 
-
-    display: flex;
-    align-items: flex-start;
-    align-content: flex-start;
-    gap: 36px 45px;
-    flex-wrap: wrap;
-} */
 .info{
     display: flex;
     height: 180px;
