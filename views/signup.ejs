@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/css/signup.css"/>
+        <title>LmS2_signup</title>
+    </head>
+    <body>
+        <div clas="navigationbar">
+        </div>
+        <div class="title">
+        Look<br> My Shedule<br> To LMS</div> 
+        <div class="content">
+            LmS2에 어서오세요<br>
+            우리 LMS2에서는 캐릭터를 양성할 수 있어요.<br>
+            하루의 목표를 설정하고 달성하여, 나만의 캐릭터를<br>
+            가꾸어 보세요. 분명 좋은 결과가 있을 것이에요.<br><br>
+
+            기존 LMS와 연동하여 과제, 영상 강의 등 교과목의<br>
+            어쩌구를 할 수 있어요~<br> 
+            등의 서비스 소개<br>
+        </div> 
+        <div class="box">
+            <input type="text" name="username" value=" 이름" class="username">
+            <input type="text" name="id" value=" 아이디" class="id">
+            <input type="text" name="password" value=" 비밀번호" class="password">
+            <input type="text" name="checkpass" value=" 비밀번호 확인" class="checkpass">
+            <input type="button" name="nextbut" value=" 회원가입" class="nextbut" id="signupButton">
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const signupButton = document.getElementById("signupButton");
+                signupButton.addEventListener("click", () => {
+                    const username = document.querySelector(".username").value;
+                    const id = document.querySelector(".id").value;
+                    const password = document.querySelector(".password").value;
+                    const checkpass = document.querySelector(".checkpass").value;
+        
+                    // 여기에서 AJAX 요청 보내기 또는 HTML 폼을 사용하여 POST 요청 생성하기
+                    // AJAX 예시:
+                    fetch("/signup", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({
+                            userName: username,
+                            userId: id,
+                            password: password,
+                            checkpass: checkpass
+                        })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log(data); // 서버로부터 받은 응답 처리
+                        // 필요한 동작 수행
+                    })
+                    .catch(error => {
+                        console.error("에러 발생:", error);
+                    });
+                });
+            });
+        </script>
+    </body>                 
+
+</html>

@@ -14,10 +14,6 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING(20),
       allowNull: true
     },
-    mailadd: {
-      type: DataTypes.STRING(30),
-      allowNull: false
-    },
     point: {
       type: DataTypes.INTEGER,
       allowNull: false,
