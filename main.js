@@ -184,21 +184,21 @@ app.post("/addTodo", async (req, res) => {
   });
 
 //Todo 출력
-// app.get("/getTodos", async (req, res) => {
-//     const userId = req.session.userId; // 세션에서 userId 가져오기
+app.get("/getTodos", async (req, res) => {
+    const userId = req.session.userId; // 세션에서 userId 가져오기
 
-//     try {
-//         const todos = await db.Todo.findAll({
-//             where: { userId: userId },
-//             order: [['todoNum', 'ASC']]
-//         });
+    try {
+        const todos = await db.Todo.findAll({
+            where: { userId: userId },
+            order: [['todoNum', 'ASC']]
+        });
 
-//         res.json(todos); // JSON 형태로 Todo 목록을 클라이언트에게 전송
-//     } catch (error) {
-//         console.error("할일 목록 불러오기 오류:", error);
-//         res.sendStatus(500); // 오류 응답
-//     }
-// });
+        res.json(todos); // JSON 형태로 Todo 목록을 클라이언트에게 전송
+    } catch (error) {
+        console.error("할일 목록 불러오기 오류:", error);
+        res.sendStatus(500); // 오류 응답
+    }
+});
 
 app.get("/TODO", async (req, res) => {
     try {
