@@ -196,6 +196,69 @@
 
     margin-top:24px; margin-left:360px; margin-bottom: 40px;
 }
+
+#popupButton {
+    display: inline-block;
+    width: 1200px;
+    height: 96px;
+    padding: 29px 0px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+
+    border: none;
+    border-radius: 30px;
+    background: var(--primary-dark-pink, #ED7D76);
+    color: var(--text-white, #FFF);
+    text-align: center;
+
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+
+    font-family: Pretendard;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -1.28px;
+
+    margin-top: 24px;
+    margin-left: 360px;
+    margin-bottom: 40px;
+  }
+  
+  #popupButton:hover {
+    background-color: #0056b3;
+  }
+
+  #popup {
+    display: none;
+    width: 995px;
+    height: 600px;
+    flex-shrink: 0;
+    border-radius: 30px;
+    background: #FFF;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .popup-content {
+    padding: 20px;
+  }
+  
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
 .info{
     display: flex;
     height: 180px;
