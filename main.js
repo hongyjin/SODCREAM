@@ -1,5 +1,6 @@
 const express = require("express");//express 요청
 const app = express();
+const session = require('express-session');
 const path = require('path');
 const mysql = require('mysql');
 const homeController = require("./controllers/homeController");
@@ -17,6 +18,11 @@ app.use(
                 extended: false
         })
 );
+app.use(session({
+    secret: 'your-secret-key', // 세션 암호화에 사용되는 키, 변경해주셔야 합니다
+    resave: false,
+    saveUninitialized: true,
+}));
 app.use(express.json()); // Express 미들웨어 설정
 
 //데이터베이스 연결
@@ -38,8 +44,6 @@ db.sequelize.sync({force : false}) // 서버 실행시 MySQL 과 연동되도록
 
 //URL 연결
 console.log(homeController);
-//app.get("/hobby", homeController.showHobby); //취미
-//app.get("/error", errorController.pageNotFoundError); //에러
 app.get('/users', (req, res) => {
         connection.query('SELECT * from User', (error, rows) => {
           if (error) throw error;
@@ -48,7 +52,10 @@ app.get('/users', (req, res) => {
         });
       });
 app.get("/", (req, res) => { //루트 라우트 생성
-        res.render("Home");
+        res.render("gerneralHome");
+});
+app.get("/Home", (req, res) => { //루트 라우트 생성
+    res.render("Home");
 });
 app.get("/signup", (req, res) => {
         res.render("signup"); // signup.ejs 렌더링
@@ -56,8 +63,14 @@ app.get("/signup", (req, res) => {
 app.get("/login", (req, res) => {
         res.render("login"); // login.ejs 렌더링
 });
-app.get("/TODO", (req, res) => { //루트 라우트 생성
+app.get("/TODO", (req, res) => { 
         res.render("TODO");
+});
+app.get("/closet", (req, res) => { 
+    res.render("closet");
+});
+app.get("/collection", (req, res) => { 
+    res.render("dictionary");
 });
 
 //회원가입
@@ -90,8 +103,9 @@ app.post("/login", async (req, res) => {
             
             if (user) {
                 if (user.password === password) {
+                    req.session.userId = user.userId; // 세션에 userId 저장
                     console.log("로그인 성공:", user.userId);
-                    res.redirect("/"); // 로그인 성공 시 폼 페이지로 리다이렉트
+                    res.redirect("/Home"); // 로그인 성공 시 폼 페이지로 리다이렉트
                 } else {
                     console.log("비밀번호가 일치하지 않음");
                     res.redirect("/login"); // 비밀번호 불일치 시 폼 페이지로 리다이렉트
@@ -106,6 +120,48 @@ app.post("/login", async (req, res) => {
             res.redirect("/login"); // 오류 발생 시 폼 페이지로 리다이렉트
         }
     });
+
+// Todo
+app.post("/addTodo", async (req, res) => {
+    const { todoContent, categoryName } = req.body;
+    const userId = req.session.userId; // 클라이언트에서 받은 userId
+  
+    try {
+        const user = await User.findOne({ where: { userId: userId } });
+        // todoNum 값 조회
+        const lastTodo = await db.Todo.findOne({
+            where: { userId: userId },
+            order: [['todoNum', 'DESC']]
+        });
+  
+        // 기본값은 0으로 설정
+        let nextTodoNum = 1;
+  
+        if (lastTodo) {
+            nextTodoNum = lastTodo.todoNum + 1;
+        }
+
+        if (user) {
+            // Todo 테이블에 새로운 Todo 추가
+            await db.Todo.create({
+                todoNum: nextTodoNum, // todoNum 값 설정
+                todoContent: todoContent,
+                categoryName: categoryName,
+                userId: userId
+            });
+
+            console.log("Todo 추가 성공:", userId, todoContent);
+            res.sendStatus(200); // 성공 응답
+        } else {
+            console.log("사용자가 존재하지 않음");
+            res.sendStatus(400); // 실패 응답
+        }
+    } catch (error) {
+      console.error("할일 추가 오류:", error);
+      res.sendStatus(500);
+    }
+  });
+  
 
 app.listen(app.get("port"), () => { //80번 포트 리스닝 설정
         console.log(`Server running at http://localhost:${app.get("port")}`);
