@@ -17,14 +17,11 @@
     border: 1px solid var(--primary-pink, #FDCAC7);
     background: var(--primary-dark-pink, #ED7D76);
     position: relative;
+    padding-left: 360px;
 }
 
 #logo {
-    width: 113.778px;
-    height: 64px;
-    background: url(https://github.com/hongyjin/SODCREAM/blob/master/asset/Logo3.2_header.png?raw=true);
-    position: absolute;
-    z-index: 6;
+    margin-left: 360px;;
 }
 
 #user {
