@@ -3,27 +3,35 @@
         display: flex;
         width: 1920px;
         height: 1080px;
-        padding: 162px 637px 162px 638px;
+        /* padding: 162px 637px 162px 638px; */
         justify-content: center;
         align-items: center;
         background-color:#FFF;
     }
     .box{
         width: 645px; height: 756px; flex-shrink: 0;
-        border-radius: 30px; background: #FFF;
+        border-radius: 30px;
+        /* background: #FFF; */
 
         /* shadow_big */
         box-shadow: 0px 0px 30px 0px rgba(51, 51, 51, 0.25);
-        margin-left:638px; margin-top:162px;
+        margin-left:58px; margin-top:162px;
     }
     .image{
+    }
+
+    .logo-login{
+        flex-shrink: 0;
+        background: url(https://github.com/hongyjin/SODCREAM/blob/master/asset/logo1.2-login.png?raw=true);
+        /* margin-left:142px;
+        margin-top:65px; */
+        margin-top: 65px;
+        margin-left: 142px;
         width: 360px;
         height: 202.5px;
-        flex-shrink: 0;
-        background: url(<https://ibb.co/N9sKBfW>), lightgray 50% / cover no-repeat;
-        margin-left:142px; margin-top:65px;
     }
-    .id{
+
+    .userId{
         width: 440px;   
         height: 72px;
         flex-shrink: 0;

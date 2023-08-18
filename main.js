@@ -67,7 +67,7 @@ app.get("/TODO", (req, res) => {
         res.render("TODO");
 });
 app.get("/closet", (req, res) => { 
-    res.render("closet");
+    res.render("colorcloset");
 });
 app.get("/collection", (req, res) => { 
     res.render("dictionary");

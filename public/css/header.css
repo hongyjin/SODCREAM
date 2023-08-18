@@ -1,0 +1,44 @@
+.body {
+    width: 1920px;
+    min-height: 1080px;
+    background: black;
+}
+
+/*헤더*/
+.navBar {
+    width: 1920px;
+    height: 80px;
+    /* height: inherit;
+    display: inline-flex;
+    padding: 8px 360px;
+    justify-content: center;
+    align-items: center;
+    gap: 920.222px; */
+    border: 1px solid var(--primary-pink, #FDCAC7);
+    background: var(--primary-dark-pink, #ED7D76);
+    position: relative;
+}
+
+#logo {
+    width: 113.778px;
+    height: 64px;
+    background: url(https://github.com/hongyjin/SODCREAM/blob/master/asset/Logo3.2_header.png?raw=true);
+    position: absolute;
+    z-index: 6;
+}
+
+#user {
+    width: 166px;
+    height: 29;
+}
+
+#login-header {
+    color: var(--text-white, #FFF);
+    text-align: right;
+    font-family: Pretendard;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -0.96px;
+}   
