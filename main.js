@@ -182,7 +182,34 @@ app.post("/addTodo", async (req, res) => {
       res.sendStatus(500);
     }
   });
-  
+
+//Todo 출력
+// app.get("/getTodos", async (req, res) => {
+//     const userId = req.session.userId; // 세션에서 userId 가져오기
+
+//     try {
+//         const todos = await db.Todo.findAll({
+//             where: { userId: userId },
+//             order: [['todoNum', 'ASC']]
+//         });
+
+//         res.json(todos); // JSON 형태로 Todo 목록을 클라이언트에게 전송
+//     } catch (error) {
+//         console.error("할일 목록 불러오기 오류:", error);
+//         res.sendStatus(500); // 오류 응답
+//     }
+// });
+
+app.get("/TODO", async (req, res) => {
+    try {
+        const todos = await db.Todo.findAll({ where: { userId: req.session.userId } });
+        res.render("TODO", { todos: todos }); // todos 배열을 TODO.ejs로 넘겨줌
+        console.log(todos);
+    } catch (error) {
+        console.error("할일 목록 불러오기 오류:", error);
+        res.redirect("/Home"); // 오류 발생 시 홈으로 리다이렉트
+    }
+});
 
 app.listen(app.get("port"), () => { //80번 포트 리스닝 설정
         console.log(`Server running at http://localhost:${app.get("port")}`);
