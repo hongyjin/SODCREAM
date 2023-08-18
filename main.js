@@ -69,6 +69,9 @@ app.get("/TODO", (req, res) => {
 app.get("/closet", (req, res) => { 
     res.render("colorcloset");
 });
+app.get("/eyecloset", (req, res) => { 
+    res.render("eyecloset");
+});
 app.get("/collection", (req, res) => { 
     res.render("dictionary");
 });
