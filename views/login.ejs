@@ -8,13 +8,56 @@
         <div class="background">
             <div class="box">
                 <img src="https://ibb.co/N9sKBfW"> <br>
-                <input type="text" name="id" value="   아이디를 입력하세요" class="id"> 
+                <input type="text" name="userId" value="   아이디를 입력하세요" class="userId"> 
                 <input type="text" name="password" value="   비밀번호를 입력하세요" class="password">
-                <input type="button" name="login" value="로그인" class="loginbut">
+                <input type="button" name="login" value="로그인" class="loginbut" id="loginbutton">
                 <div class="question">LMS2가 처음이신가요? 
                 <div class="answer">회원가입</div>
             </div>
             </div>
         </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const loginButton = document.getElementById("loginbutton");
+                loginButton.addEventListener("click", async () => {
+                    const userId = document.querySelector(".userId").value;
+                    const password = document.querySelector(".password").value;
+    
+                    // 서버로 로그인 요청 보내기
+                    try {
+                        const response = await fetch("/login", {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json"
+                            },
+                            body: JSON.stringify({
+                                userId: userId,
+                                password: password
+                            })
+                        });
+
+                        if (response.redirected) {
+                // 리다이렉션된 경우
+                console.log("리다이렉션 응답 받음");
+                window.location.href = response.url; // 리다이렉션 수행
+            } else {
+                console.log("리다이렉션되지 않음");
+            }
+    
+                        // const data = await response.json();
+                        // console.log("서버 응답:", data);
+    
+                        // if (data.success) {
+                        //     console.log("로그인 성공:", data.username);
+                        //     window.location.href = "/"; // "/" 페이지로 리다이렉션
+                        // } else {
+                        //     console.log("로그인 실패");
+                        // }
+                    } catch (error) {
+                        console.error("에러 발생:", error);
+                    }
+                });
+            });
+        </script>
     </body>
 </html>
