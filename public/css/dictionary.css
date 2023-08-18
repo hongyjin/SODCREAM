@@ -258,6 +258,20 @@
     font-size: 20px;
     cursor: pointer;
   }
+.popuptitle{
+    color: var(--text-black, #333);
+    text-align: center;
+    
+    /* subTitle */
+    font-family: Pretendard;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -1.28px;
+
+    margin-left:350px; margin-top:-472px;
+}
 
 .info{
     display: flex;
