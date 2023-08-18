@@ -69,8 +69,26 @@ app.get("/TODO", (req, res) => {
 app.get("/closet", (req, res) => { 
     res.render("colorcloset");
 });
+app.get("/colorcloset", (req, res) => { 
+    res.render("colorcloset");
+});
 app.get("/eyecloset", (req, res) => { 
     res.render("eyecloset");
+});
+app.get("/haircloset", (req, res) => { 
+    res.render("haircloset");
+});
+app.get("/mouthcloset", (req, res) => { 
+    res.render("mouthcloset");
+});
+app.get("/nosecloset", (req, res) => { 
+    res.render("nosecloset");
+});
+app.get("/othercloset", (req, res) => { 
+    res.render("othercloset");
+});
+app.get("/shoescloset", (req, res) => { 
+    res.render("shoescloset");
 });
 app.get("/collection", (req, res) => { 
     res.render("dictionary");
@@ -86,7 +104,7 @@ app.post("/signup", async (req, res) => {
             await db.User.create({
                 userName: username,
                 userId: userId,
-                password: password // 해싱 필요
+                password: password // 해싱 필요..
             });
     
             console.log("회원가입 성공:", username);
