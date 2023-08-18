@@ -63,13 +63,13 @@ app.get("/TODO", (req, res) => { //루트 라우트 생성
 //회원가입
 const { User } = require('./models');
 app.post("/signup", async (req, res) => {
-        const { username, id, password, checkpass } = req.body;
+        const { username, id, password} = req.body;
     
         try {
             // User 테이블에 회원 정보 저장
-            await User.create({
+            await db.User.create({
                 userName: username,
-                userId: id,
+                userId: userId,
                 password: password // 해싱 필요
             });
     
@@ -83,15 +83,15 @@ app.post("/signup", async (req, res) => {
 
 //로그인
 app.post("/login", async (req, res) => {
-        const { id, password } = req.body;
+        const { userId, password } = req.body;
     
         try {
-            const user = await User.findOne({ where: { id: id } });
+            const user = await User.findOne({ where: { userId: userId } });
             
             if (user) {
                 if (user.password === password) {
-                    console.log("로그인 성공:", user.username);
-                    res.redirect("/Home"); // 로그인 성공 시 폼 페이지로 리다이렉트
+                    console.log("로그인 성공:", user.userId);
+                    res.redirect("/"); // 로그인 성공 시 폼 페이지로 리다이렉트
                 } else {
                     console.log("비밀번호가 일치하지 않음");
                     res.redirect("/login"); // 비밀번호 불일치 시 폼 페이지로 리다이렉트
@@ -100,6 +100,7 @@ app.post("/login", async (req, res) => {
                 console.log("사용자가 존재하지 않음");
                 res.redirect("/login"); // 사용자 없을 시 폼 페이지로 리다이렉트
             }
+
         } catch (error) {
             console.error("로그인 오류:", error);
             res.redirect("/login"); // 오류 발생 시 폼 페이지로 리다이렉트
