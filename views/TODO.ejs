@@ -39,9 +39,21 @@
           </div>
           <div class="todolist">
             <ul>
+                <% let currentCategoryNum = null; %>
                 <% todos.forEach(todo => { %>
+                    <% if (currentCategoryNum !== todo.categotyNum) { %>
+                        <% if (currentCategoryNum !== null) { %>
+                            </ul>
+                        <% } %>
+                        <h2>Category <%= todo.categotyNum %></h2>
+                        <ul>
+                        <% currentCategoryNum = todo.categotyNum; %>
+                    <% } %>
                     <li><%= todo.todoContent %></li>
                 <% }); %>
+                <% if (currentCategoryNum !== null) { %>
+                    </ul>
+                <% } %>
             </ul>
           </div>
         <div id="addTodoButton">TO-DO 추가하기 +</div>

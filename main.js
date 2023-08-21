@@ -63,9 +63,20 @@ app.get("/signup", (req, res) => {
 app.get("/login", (req, res) => {
         res.render("login"); // login.ejs 렌더링
 });
-app.get("/TODO", (req, res) => { 
-        res.render("TODO");
+// main.js
+app.get("/TODO", async (req, res) => {
+    try {
+        const todos = await db.Todo.findAll({ 
+            where: { userId: req.session.userId },
+            order: [['categoryName', 'ASC']] // 카테고리 순으로 정렬
+        });
+        res.render("TODO", { todos: todos }); // todos 배열을 TODO.ejs로 넘겨줌
+    } catch (error) {
+        console.error("할일 목록 불러오기 오류:", error);
+        res.redirect("/Home"); // 오류 발생 시 홈으로 리다이렉트
+    }
 });
+
 app.get("/closet", (req, res) => { 
     res.render("colorcloset");
 });
@@ -197,17 +208,6 @@ app.get("/getTodos", async (req, res) => {
     } catch (error) {
         console.error("할일 목록 불러오기 오류:", error);
         res.sendStatus(500); // 오류 응답
-    }
-});
-
-app.get("/TODO", async (req, res) => {
-    try {
-        const todos = await db.Todo.findAll({ where: { userId: req.session.userId } });
-        res.render("TODO", { todos: todos }); // todos 배열을 TODO.ejs로 넘겨줌
-        console.log(todos);
-    } catch (error) {
-        console.error("할일 목록 불러오기 오류:", error);
-        res.redirect("/Home"); // 오류 발생 시 홈으로 리다이렉트
     }
 });
 

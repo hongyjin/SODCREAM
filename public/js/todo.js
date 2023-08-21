@@ -5,6 +5,17 @@ document.addEventListener("DOMContentLoaded", function() {
     const saveTodoButton = document.getElementById("saveTodoButton");
     const todoContentInput = document.getElementById("todoContent");
     const categoryNameInput = document.getElementById("categoryName");
+
+  const renderTodos = (todos) => {
+      const todoList = document.querySelector('.todolist ul');
+      todoList.innerHTML = '';
+
+      todos.forEach((todo) => {
+          const li = document.createElement('li');
+          li.textContent = todo.todoContent;
+          todoList.appendChild(li);
+      });
+  };
   
     addTodoButton.addEventListener("click", () => {
       modal.style.display = "block";
@@ -40,24 +51,13 @@ document.addEventListener("DOMContentLoaded", function() {
         });
   
         modal.style.display = "none";
+        loadAndRenderTodos(); //투두 저장 후 리스트 불러오기
+        
       } catch (error) {
         console.error("에러 발생:", error);
       }
     });
+    
+    loadAndRenderTodos();
   });
   
-  // 클라이언트 측 코드 (login.ejs)
-document.addEventListener("DOMContentLoaded", async function() {
-  // ... (기존 코드)
-  const response = await fetch("/getTodos"); // 서버로 Todo 목록 요청 보내기
-  const todos = await response.json(); // JSON 형태로 받아온 Todo 목록
-
-  // Todo 목록을 화면에 표시하는 코드 작성
-  const todoList = document.querySelector(".todo-list");
-
-  todos.forEach(todo => {
-      const todoItem = document.createElement("div");
-      todoItem.textContent = todo.todoContent; // todoContent를 출력
-      todoList.appendChild(todoItem);
-  });
-});
